@@ -1,32 +1,56 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import Recipe from './Recipe';
 import './App.css';
-import RecipeCollection from './components/RecipeCollection';
-import RecipeTitle from './components/RecipeTitle';
-import Recipe from './components/Recipe';
-import AddRecipe from './components/AddRecipe';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <div style={ titleStyle }>
-          <h1>Recipe App</h1>
-        </div>
-        <div className="main">
-        <RecipeCollection />
-        <RecipeTitle />
-        <Recipe />
-        <AddRecipe />
-      </div>
-      </div>
-    );
-  }
+
+const App = () => {
+
+  const APP_ID = '452c4fe6';
+  const APP_KEY = '37322142bdddfaed1a02fb55ce5f85ae';
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    getRecipes();
+  }, [query]);
+
+  const getRecipes = async () => {
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await response.json();
+    setRecipes(data.hits);
+    console.log(data.hits);
+  };
+
+  const updateSearch = e =>{
+    setSearch(e.target.value);
+    console.log(search);
+  };
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch('');
+  };
+
+  return (
+    <div className="App">
+      <form onSubmit={getSearch} className="search-form">
+        <input type="text" className="search-bar" value={search} onChange={updateSearch} />
+        <button className="search-button" type="submit">
+            Search
+          </button>
+      </form>
+      {recipes.map(recipe => (
+        <Recipe 
+          key={recipe.recipe.label}
+          title={recipe.recipe.label} 
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image}
+        />
+      ))}
+    </div>
+  );
 }
 
-const titleStyle = {
-  textAlign: 'center',
-  color: '#FFF'
-}
-
-export default App
-
+export default App;
