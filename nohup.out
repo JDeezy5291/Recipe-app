@@ -1,0 +1,72 @@
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start "3001"
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start "3001"
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start "--port" "3001"
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
+
+> recipe-app@0.1.0 start /home/ubuntu/Recipe-app
+> react-scripts start
+
+Something is already running on port 3000.
+
+┌──────────────────────────────────────────────────────────┐
+│                 npm update check failed                  │
+│           Try running with sudo or get access            │
+│           to the local update config store via           │
+│ sudo chown -R $USER:$(id -gn $USER) /home/ubuntu/.config │
+└──────────────────────────────────────────────────────────┘
