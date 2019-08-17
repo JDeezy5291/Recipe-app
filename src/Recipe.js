@@ -1,7 +1,4 @@
 import React from 'react'
-import App from './App';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import RecipePage from './components/RecipePage';
 
 function Recipe({ title, image, calories, fatLabel, fat, proteinLabel, protein, carbLabel, carb, servings, ingredients, url }) {
     return (
