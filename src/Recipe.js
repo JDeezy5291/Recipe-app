@@ -1,43 +1,58 @@
-import React from 'react';
+import React from 'react'
+import App from './App';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import RecipePage from './components/RecipePage';
 
-const Recipe = ({ title, calories, image }) => {
+function Recipe({ title, image, calories, fatLabel, fat, proteinLabel, protein, carbLabel, carb, servings, ingredients, url }) {
     return (
         <div>
             <section style={recipeSection}>
-                <div style={recipeDec}>
-                    <h1 style={{fontSize: '25px'}}>{title}</h1>
-                    <p style={{fontSize: '15px'}}>{calories}</p>
-                </div>
                 <img style={recipeImage} src={image} alt='' />
+                <div id="recipe_Name" style={recipeName}>
+                    <h1 style={{ fontSize: '25px' }}>{title}</h1>
+                        <div className="recipe_left">
+                            <h1 style={{ fontSize: '12px' }}>Calories</h1>
+                            <p style={{ fontSize: '12px' }}>{calories}</p>
+                            <h1 style={{ fontSize: '12px' }}>Servings</h1>
+                            <p style={{ fontSize: '12px' }}>{servings}</p>
+                        </div>
+                        <div className="recipe_right">
+                            <h1 style={{ fontSize: '12px' }}>{fatLabel}</h1>
+                            <p style={{ fontSize: '12px' }}>{fat}</p>
+                            <h1 style={{ fontSize: '12px' }}>{proteinLabel}</h1>
+                            <p style={{ fontSize: '12px' }}>{protein}</p>
+                            <h1 style={{ fontSize: '12px' }}>{carbLabel}</h1>
+                            <p style={{ fontSize: '12px' }}>{carb}</p>
+                        </div>
+                        {/* <div className="ingredientsList">
+                            <h3 style={{ fontSize: '15px' }}>Ingredients:</h3>
+                            <ol>
+                                {ingredients.map(ingredient => (
+                                    <li style={{ fontSize: '12px' }}>{ingredient.text}</li>
+                                ))}
+                            </ol>
+                        </div> */}
+                        <a className="_URL" href={url}>Recipe</a>
+                </div>
             </section>
+            <hr />
         </div>
     );
 }
 const recipeSection = {
     display: 'grid',
-    gridTemplateColumns: 'auto auto',
-    padding: '10px'
+    gridTemplateColumns: '50% 50%',
+    padding: '20px 10px'
 }
-const recipeDec = {
-    // float: 'left'
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-  border:' 1px solid rgba(0, 0, 0, 0.8)',
-  padding: '20px',
-  fontSize: '30px',
-  textAlign: 'center'
-
+const recipeName = {
+    padding: '20px',
+    fontSize: '30px',
+    textAlign: 'center'
 }
-// const recipeTitle = {
-//     fontSize: '25px'
-// }
 const recipeImage = {
-    maxWidth: '100%',
-  height: 'auto',
-backgroundColor: 'rgba(255, 255, 255, 0.8)',
-  border:' 1px solid rgba(0, 0, 0, 0.8)',
-  padding: '20px',
-  fontSize: '30px',
-  textAlign: 'center'
+    width: '100%',
+    height: 'auto',
+    textAlign: 'center'
 }
 
 export default Recipe;
